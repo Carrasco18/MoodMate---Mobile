@@ -1,0 +1,463 @@
+/* === Landing Page Styles (Adjusted Sizes) === */
+body.landing-page {
+  margin: 0;
+  background: linear-gradient(180deg, #3A57D0 0%, #1F2A63 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
+}
+
+.hero {
+  width: 70%;
+  max-width: 360px;
+}
+
+/* Make the illustration a bit taller, up to 240px high */
+.hero-img {
+  width: auto;
+  max-width: 100%;
+  max-height: 170px;    /* ← new limit */
+  margin: 0 auto 1.5rem;
+}
+
+/* Increase title size for stronger emphasis */
+.hero-title {
+  font-size: 2rem;      /* ↑ from 2.5rem */
+  margin-bottom: 0.75rem; /* a little more breathing room */
+}
+
+/* Slightly larger subtitle for readability */
+.hero-subtitle {
+  font-size: 1rem;  /* ↑ from 1rem */
+  line-height: 1.4;
+  margin-bottom: 2.5rem; /* a bit more space before buttons */
+}
+
+/* Button container stays the same */
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;             /* ↑ gap between buttons */
+}
+
+/* Base button tweaks: larger text & padding */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;        /* ↑ from 0.75rem */
+  font-size: 1rem;  /* ↑ from 1rem */
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-primary {
+  background: #0E1A4F;
+  color: #FFFFFF;
+  border: none;
+}
+.btn-primary:hover {
+  background: #192E7F;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+}
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+
+/* 1) Global reset & box‑sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2) Container for mobile portrait (~360px wide) */
+.container {
+  width: 100%;
+  max-width: 360px;   /* 1080px / 3 device‑pixel‑ratio ≈ 360 CSS px */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* 3) Base typography & body */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+h1, h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* 4) Navigation: stacked buttons on mobile */
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+nav a {
+  display: block;
+  text-align: center;
+  padding: 0.7rem;
+  background: #0366d6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+nav a:hover {
+  background: #0255b3;
+}
+
+/* 5) Form styles: full‑width inputs & buttons */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+label {
+  font-weight: bold;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background: #0366d6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background: #0255b3;
+}
+
+/* 6) Feedback messages */
+ul.error {
+  background: #fee;
+  border: 1px solid #f99;
+  padding: 0.8rem;
+  list-style: none;
+}
+p.success {
+  background: #efe;
+  border: 1px solid #9f9;
+  padding: 0.8rem;
+}
+
+/* 7) Larger screens: switch to side‑by‑side nav & content */
+@media (min-width: 480px) {
+  .container {
+    max-width: 400px;
+  }
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  nav a {
+    flex: 1;
+    margin: 0 0.25rem;
+  }
+  h1, h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* === Sign‑Up Page Styles (Revised) === */
+body.signup-page {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f5f5f7;         /* very light neutral */
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Back arrow as a neat circle */
+.back-btn {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: #555555;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.back-btn:hover {
+  background: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Centered “card” container */
+.signup-container {
+  background: #ffffff;
+  margin: 4rem auto;           /* 4rem top & bottom, auto left/right */
+  padding: 2.5rem 2rem;        /* increased inner padding */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;      /* ensure padding doesn’t push past max-width */
+}
+
+/* Title & subtitle spacing */
+.signup-container h1 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 0.25rem;
+}
+
+.signup-container .subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #666666;
+  margin-bottom: 1.75rem;
+}
+
+/* Uniform input groups */
+.input-group {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.input-group i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0a0a0;
+  font-size: 1.1rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 0.8rem 0.8rem 3rem;
+  background: #fafafa;
+  border: 1px solid #dddddd;
+  border-radius: 30px;
+  color: #333333;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-group input::placeholder {
+  color: #bbbbbb;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 4px rgba(25, 118, 210, 0.15);
+}
+
+/* Terms text */
+.terms {
+  font-size: 0.75rem;
+  color: #888888;
+  margin: 1rem 0 1.5rem;
+}
+
+.terms a {
+  color: #1976d2;
+  text-decoration: none;
+}
+.terms a:hover {
+  text-decoration: underline;
+}
+
+
+/* Primary button */
+
+/* === Custom “REGISTER” Button === */
+.button {
+  --stone-50: #fafaf9;
+  --stone-800: #292524;
+  --yellow-400: #facc15;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  line-height: 1;
+  padding: 1px;
+  transform: translate(-4px, -4px);
+  outline: 2px solid transparent;
+  outline-offset: 5px;
+  border-radius: 9999px;
+  background-color: var(--stone-800);
+  color: var(--stone-800);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  text-align: center;
+  box-shadow:
+    0.5px 0.5px 0 0 var(--stone-800),
+    1px 1px 0 0 var(--stone-800),
+    1.5px 1.5px 0 0 var(--stone-800),
+    2px 2px 0 0 var(--stone-800),
+    2.5px 2.5px 0 0 var(--stone-800),
+    3px 3px 0 0 var(--stone-800),
+    0 0 0 2px var(--stone-50),
+    0.5px 0.5px 0 2px var(--stone-50),
+    1px 1px 0 2px var(--stone-50),
+    1.5px 1.5px 0 2px var(--stone-50),
+    2px 2px 0 2px var(--stone-50),
+    2.5px 2.5px 0 2px var(--stone-50),
+    3px 3px 0 2px var(--stone-50),
+    3.5px 3.5px 0 2px var(--stone-50),
+    4px 4px 0 2px var(--stone-50);
+}
+.button:hover {
+  transform: translate(0, 0);
+  box-shadow: 0 0 0 2px var(--stone-50);
+}
+.button:active,
+.button:focus-visible {
+  outline-color: var(--yellow-400);
+}
+.button:focus-visible {
+  outline-style: dashed;
+}
+.button > div {
+  position: relative;
+  pointer-events: none;
+  background-color: var(--yellow-400);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 9999px;
+}
+.button > div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(rgb(255 255 255 / 80%) 20%, transparent 20%),
+    radial-gradient(rgb(255 255 255 / 100%) 20%, transparent 20%);
+  background-position: 0 0, 4px 4px;
+  background-size: 8px 8px;
+  mix-blend-mode: hard-light;
+  animation: dots 0.5s infinite linear;
+}
+.button > div > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  gap: 0.25rem;
+  filter: drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.25));
+}
+.button > div > span:active {
+  transform: translateY(2px);
+}
+@keyframes dots {
+  0% {
+    background-position: 0 0, 4px 4px;
+  }
+  100% {
+    background-position: 8px 0, 12px 4px;
+  }
+}
+
+/* Lift the “Already have an account?” link up a bit */
+.login-link {
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: #666666;
+}
+
+.login-link a {
+  color: #1976d2;
+  text-decoration: none;
+}
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* === Sign‑In Page Styles === */
+body.signin-page {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f5f5f7;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* form-extra: checkbox + forgot link */
+.form-extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.form-extra label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #555;
+}
+.form-extra a {
+  font-size: 0.875rem;
+  color: #1976d2;
+  text-decoration: none;
+}
+.form-extra a:hover {
+  text-decoration: underline;
+}
+
+/* Lift the bottom link a bit if needed */
+.login-link {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.login-link a {
+  color: #1976d2;
+}
+
+/* Back‑button tweak (optional) */
+.back-btn {
+  /* reuse from signup—no changes needed if already defined */
+}
+
